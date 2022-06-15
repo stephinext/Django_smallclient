@@ -1,0 +1,94 @@
+
+{% extends 'smallclient/base.html' %}
+{% load static %}
+{% block main%}
+
+<div class="container">
+    <div class="main-body">
+      
+          <div class="row adjust-margin">
+            <div class="col-md-4 mb-3 top-adjust">
+                <h3></h3>
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+
+                    <img src='/media/{{data.profile_pic}}' alt="Admin" class="rounded-circle" width="200px" height='200px'>
+                    <div class="mt-3">
+                      {{data.name}}
+                      <p class="text-secondary mb-1">Date Joined: {{data.date_joined}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-md-8">
+                <h2>CLIENT INFORMATION</h2>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{data.name}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{data.point_of_contact}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Website</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{data.website}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Goal Choice</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{data.goal_choices}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Status</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {% if data.check_due %}
+                      <p style="color: red;">Date is due </p>
+                      {% else%}
+                      <p style="color:green ;"> Not due</p>
+                      {%endif%}
+                      
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <a class="btn btn-info " target="__blank" href="#">Edit Profile</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+{% endblock main%}

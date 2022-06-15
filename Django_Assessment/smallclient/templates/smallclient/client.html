@@ -1,0 +1,55 @@
+
+{% extends 'smallclient/base.html' %}
+{% load static %}
+{% block main %}
+<main >
+  <div class="main-background col-md-12 container-fluid">
+    <div class="main-content">
+    <form action="#" method="POST" enctype="multipart/form-data">
+  
+      <div class= "container-fluid col-md-6 text-center create-grid">
+      <div class="h-100 p-5 text-light  rounded-3">
+              <h2>Register  Client Information</h2>
+              <p style="color: red;text-align:left">{{message|striptags}}</p>
+            
+      
+            {% csrf_token %}
+            {{form.non_field_errors }}
+            {% for field in form %}
+            <p>
+              {% if field.errors  %}
+               <div  style="color: red;text-align:left"> {{field.errors|striptags}}</div>
+               <p>
+               {% endif%}
+              {% if field.name == "due_date" %}
+                <label class="container-fluid">{{ field.label }}</label>
+              {% elif field.name == "profile_pic"  %}
+              <div class='contain-float'>
+                <label for="file-search" class="select_file">
+                  Profile Image 
+                </label>
+                <div class="preview">
+                  <img id="file-ip-1-preview">
+                </div>
+
+              {% else%}
+              {{ field.label }}
+              {% endif %}
+
+        {{ field }}
+    {% endfor %}
+        
+          {% comment %} End of the left float {% endcomment %}
+          <p id="info"></p>
+        </div>
+      
+      </div>
+      </div>
+
+      <button class="button_l w-50 btn btn-lg " type="submit">Create</button>
+    </form>
+  </div>
+  </div>
+</main>
+
+{% endblock main %}

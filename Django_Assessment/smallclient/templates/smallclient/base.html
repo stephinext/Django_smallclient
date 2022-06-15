@@ -1,0 +1,57 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Sapphire Test</title>
+
+    <link href="{% static "assets/css/bootstrap.min.css" %}" media="all" rel="stylesheet" type="text/css" />
+    <link href="{% static "assets/css/custom.css" %}" media="all" rel="stylesheet" type="text/css" />
+    <link href="{% static "assets/css/general/view.css" %}" media="all" rel="stylesheet" type="text/css" />
+    
+<body class='text-center'>
+    <nav class="navbar navbar-expand-lg main_black">
+      <div class="container">
+        <a class="navbar-brand" href="">
+          <img src="{% static 'assets/images/saphire_logo.svg'%}"alt="Sapphire Studios">
+        </a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          </ul>
+          <a href="{% url "list_clients" %}">
+          <button type="button" class="main_black btn btn-dark">CLIENTS</button>
+          </a>
+          <a href="{% url "create_client" %}">
+            <button type="button" class="main_black btn btn-dark">Create Account</button>
+            </a>
+
+
+          </form>
+        </div>
+      </div>
+    </nav>
+
+{% block main %}{% endblock %}
+
+
+<footer class="container-fluid back-color">
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <h2> Inspired by Sapphire</h2>
+  </div>
+</footer>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+<script src="{% static "assets/js/jquery.min.js" %}"></script>
+<script src="{% static "assets/js/popper.min.js" %}"></script>
+<script src="{% static "assets/js/bootstrap.min.js" %}"></script>
+<script src="{% static "assets/js/custom.js" %}"></script>
+</body>
+</html>
+
